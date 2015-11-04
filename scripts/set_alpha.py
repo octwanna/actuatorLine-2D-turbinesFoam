@@ -2,7 +2,10 @@
 
 import sys
 
-alpha_deg = sys.argv[1]
+if len(sys.argv) > 1:
+    alpha_deg = sys.argv[1]
+else:
+    alpha_deg = 4.0
 
 with open("system/fvOptions", "w") as f:
     with open("system/fvOptions.template") as template:
