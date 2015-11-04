@@ -44,8 +44,7 @@ boundaryField
 
     "(front|back)"
     {
-        type            epsilonWallFunction;
-        value           uniform $turbulentEpsilon;
+        type            empty;
     }
 
     "proc.*"
