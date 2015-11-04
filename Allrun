@@ -11,7 +11,6 @@ runApplication blockMesh
 runApplication snappyHexMesh -overwrite
 runApplication extrudeMesh
 runApplication topoSet
-python scripts/set_alpha.py $1
 
 if [ "$1" = "-parallel" ]
     then
@@ -24,6 +23,7 @@ if [ "$1" = "-parallel" ]
     runApplication reconstructPar
     rm -rf processor*
 else
+    python scripts/set_alpha.py $1
     simpleFoam | tee log.simpleFoam
 fi
 
