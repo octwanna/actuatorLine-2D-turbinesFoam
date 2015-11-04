@@ -15,6 +15,7 @@ python scripts/set_alpha.py $1
 
 if [ "$1" = "-parallel" ]
     then
+    python scripts/set_alpha.py $2
     nProc=$(getNumberOfProcessors)
     runApplication decomposePar
     ls -d processor* | xargs -I {} rm -rf ./{}/0
