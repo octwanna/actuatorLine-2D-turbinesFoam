@@ -19,12 +19,12 @@ if [ "$1" = "-parallel" ]
     runApplication decomposePar
     ls -d processor* | xargs -I {} rm -rf ./{}/0
     ls -d processor* | xargs -I {} cp -r 0.org ./{}/0
-    mpirun -np $nProc simpleFoam -parallel | tee log.simpleFoam
+    runParallel simpleFoam  $nProc
     runApplication reconstructPar
     rm -rf processor*
 else
     python scripts/set_alpha.py $1
-    simpleFoam | tee log.simpleFoam
+    runApplication simpleFoam
 fi
 
 vorticity | tee log.vorticity
