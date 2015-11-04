@@ -9,6 +9,7 @@ cp -rf 0.org 0
 
 runApplication blockMesh
 runApplication snappyHexMesh -overwrite
+runApplication extrudeMesh
 runApplication topoSet
 
 if [ "$1" = "-parallel" ]
