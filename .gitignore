@@ -13,3 +13,4 @@ constant/polyMesh/*
 constant/cellToRegion
 *.OpenFOAM
 system/fvOptions
+processed
