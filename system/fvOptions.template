@@ -6,43 +6,43 @@
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
 FoamFile
-{
+{{
     version     2.0;
     format      ascii;
     class       dictionary;
     location    "system";
     object      fvOptions;
-}
+}}
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 foil
-{
+{{
     type            actuatorLineSource;
     active          on;            // on/off switch
     selectionMode   cellSet;       // cellSet, points, cellZone
     cellSet         foil;          // cellSet name
 
     actuatorLineSourceCoeffs
-    {
+    {{
         fieldNames          (U);
         freeStreamVelocity  (1 0 0);
         nElements           1;
         writePerf           true;
         writeElementPerf    false;
-        endEffects          on;
+        endEffects          off;
 
         elementGeometry // Will be interpolated linearly per nElements
         ( // point spanDir chordLength chordRefDir chordMount pitch
-            ((0.0 0.0 -0.05) (0 0 1) (0.10) (-1 0 0) (0.25) (4.0))
-            ((0.0 0.0 0.05) (0 0 1) (0.10) (-1 0 0) (0.25) (4.0))
+            ((0.0 0.0 -0.05) (0 0 1) (0.10) (-1 0 0) (0.25) ({alpha_deg}))
+            ((0.0 0.0 0.05) (0 0 1) (0.10) (-1 0 0) (0.25) ({alpha_deg}))
         );
 
         elementProfiles (profile0); // Will be distributed evenly
 
         profileData
-        {
+        {{
             profile0
-            {
+            {{
                 data
                 ( // alpha C_l C_d
                     (-90 1.45 0.21)
@@ -67,9 +67,9 @@ foil
                     (18 1.45 0.21)
                     (90 1.45 0.21)
                 );
-            }
-        }
-    }
-}
+            }}
+        }}
+    }}
+}}
 
 // ************************************************************************* //
