@@ -27,4 +27,4 @@ else
     runApplication simpleFoam
 fi
 
-vorticity | tee log.vorticity
+runApplication vorticity
