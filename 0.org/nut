@@ -39,16 +39,9 @@ boundaryField
         value           uniform 0;
     }
 
-    top
+    "(front|back)"
     {
-        type            nutkWallFunction;
-        value           uniform 0;
-    }
-
-    bottom
-    {
-        type            nutkWallFunction;
-        value           uniform 0;
+        type            empty;
     }
 
     "proc.*"

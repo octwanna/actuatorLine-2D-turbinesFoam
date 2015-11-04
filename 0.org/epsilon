@@ -42,18 +42,12 @@ boundaryField
         value           uniform $turbulentEpsilon;
     }
 
-    top
+    "(front|back)"
     {
         type            epsilonWallFunction;
         value           uniform $turbulentEpsilon;
     }
 
-    bottom
-    {
-        type            epsilonWallFunction;
-        value           uniform $turbulentEpsilon;
-    }
-    
     "proc.*"
     {
         type            processor;

@@ -41,16 +41,9 @@ boundaryField
         value           uniform 0.0;
     }
 
-    top
+    "(front|back)"
     {
-        type            kqRWallFunction;
-        value           uniform 0.0;
-    }
-
-    bottom
-    {
-        type            kqRWallFunction;
-        value           uniform 0.0;
+        type            empty;
     }
 
     "proc.*"
